@@ -1,65 +1,54 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    // 1. The main container: full screen, dark background, centered flexbox
+    <main className="flex min-h-screen flex-col items-center justify-center bg-black p-4 text-white">
+      
+      {/* 2. Centralized Content Area */}
+      <div className="text-center">
+        
+        {/* 3. Logo and Title Section */}
+        <div className="flex items-center justify-center gap-4 mb-3">
+          {/* Simulated logo icon (can be replaced with an SVG or image) */}
+          <div className="bg-[#1C1C1E] border border-stone-800 text-stone-300 rounded-xl size-14 flex items-center justify-center text-2xl font-mono font-bold select-none">
+            NF
+          </div>
+          <h1 className="text-5xl font-extrabold tracking-tight">NextFlow</h1>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* 4. Subtitle / Description */}
+        <p className="text-stone-400 text-xl font-medium tracking-tight mb-8">
+          Visual AI Workflow Builder
+        </p>
+
+        {/* 5. CTA Buttons Container */}
+        <div className="flex items-center justify-center gap-4">
+          {/* Outlined Button (Sign In) */}
+          <Link
+            href="/sign-in"
+            className="px-6 py-3 rounded-lg border border-stone-800 bg-stone-900 text-stone-300 font-semibold text-lg hover:border-stone-700 hover:bg-stone-800 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Sign In
+          </Link>
+          
+          {/* Filled Purple Button (Get Started) */}
+          <Link
+            href="/(auth)/sign-up" // Linking directly to your existing auth group folder
+            className="px-6 py-3 rounded-lg bg-fuchsia-600 text-white font-semibold text-lg hover:bg-fuchsia-700 transition-colors"
           >
-            Documentation
-          </a>
+            Get Started
+          </Link>
         </div>
-      </main>
-    </div>
+      </div>
+
+      {/* 6. The bottom-left logo watermark (Fixed Position) */}
+      <div className="fixed bottom-6 left-6 flex items-center gap-2">
+        <div className="border border-stone-800 text-stone-500 rounded-lg size-10 flex items-center justify-center font-mono font-extrabold text-sm select-none">
+          N
+        </div>
+      </div>
+      
+    </main>
   );
 }
