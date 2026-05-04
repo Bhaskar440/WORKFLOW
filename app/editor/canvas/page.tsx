@@ -18,10 +18,10 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import TextInputNode   from "./_components/nodes/TextInputNode";
-import LLMNode         from "./_components/nodes/LLMNode";
-import ImageOutputNode from "./_components/nodes/ImageOutputNode";
-import VideoOutputNode from "./_components/nodes/VideoOutputNode";
+import TextInputNode   from "../_components/nodes/TextInputNode";
+import LLMNode         from "../_components/nodes/LLMNode";
+import ImageOutputNode from "../_components/nodes/ImageOutputNode";
+import VideoOutputNode from "../_components/nodes/VideoOutputNode";
 import { useNodeflowStore } from "@/lib/store";
 
 // ── MUST be outside component ──────────────────────────────────────────────
