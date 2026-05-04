@@ -77,7 +77,7 @@ export default function LeftSidebar({ userName }: Props) {
               node<span className="text-[#c8ff57]">flow</span>
             </span>
           </div>
-          <UserButton afterSignOutUrl="/sign-in" />
+          <UserButton/>
         </div>
 
         <p className="text-[11px] text-white/25 mb-3.5 truncate">
