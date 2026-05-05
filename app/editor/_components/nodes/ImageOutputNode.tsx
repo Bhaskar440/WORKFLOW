@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Handle, Position, type NodeProps } from "@xyflow/react";
 import { useNodeflowStore } from "@/lib/store";
 
-export interface ImageOutputNode extends Record<string, unknown> {}
 
 const C = "#ff57c8";
 
-export default function ImageOutputNode({ id, selected }: NodeProps<ImageOutputNode>) {
+// After
+export default function ImageOutputNode({ id, selected }: NodeProps) {
   const output = useNodeflowStore(s => s.outputs[id]);
 
   const status = output?.status ?? "idle";
