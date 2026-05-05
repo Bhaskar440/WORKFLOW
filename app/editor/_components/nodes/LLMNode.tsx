@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Handle, Position, type NodeProps, type Node } from "@xyflow/react";
+import { Handle, Position, type NodeProps } from "@xyflow/react";
 
-export interface LLMNode extends Record<string, unknown> {
+export interface LLMNodeData extends Record<string, unknown> {
   model?: string;
 }
 
@@ -20,7 +20,7 @@ const C = "#57c8ff";
 // Safe fallback so active is never undefined
 const DEFAULT_MODEL = MODELS[0];
 
-export default function LLMNode({ data, selected }: NodeProps<Node<LLMNode>>) {
+export default function LLMNode({ data, selected }: NodeProps<{data: LLMNodeData}>) {
   // Ensure the incoming model id actually exists in our list; fall back to first
   const resolvedId = MODELS.find(m => m.id === data.model)?.id ?? DEFAULT_MODEL.id;
   const [modelId, setModelId] = useState<string>(resolvedId);
